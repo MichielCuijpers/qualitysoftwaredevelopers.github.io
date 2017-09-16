@@ -4,6 +4,9 @@ node_js:
 
 cache: yarn
 
+before_deploy:
+- yarn install
+
 deploy:
   provider: script
   script: yarn run gh-pages -d build -r https://$GH_TOKEN@github.com/QualitySoftwareDevelopers/qualitysoftwaredevelopers.github.io.git -b master
