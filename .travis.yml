@@ -7,6 +7,6 @@ cache: yarn
 deploy:
   skip_cleanup: true
   provider: script
-  script: yarn run gh-pages -d build -r https://$GH_TOKEN@github.com/QualitySoftwareDevelopers/qualitysoftwaredevelopers.github.io.git -b master
+  script: .travis/deploy.sh
   on:
     branch: develop
