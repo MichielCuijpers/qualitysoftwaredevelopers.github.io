@@ -1,7 +1,20 @@
 import React from 'react';
+import Card, {CardContent, CardHeader} from 'material-ui/Card';
+import {withStyles} from 'material-ui/styles';
 
-export default class Organization extends React.Component {
+const styles = theme => ({
+    card: {
+        maxWidth: 400
+    }
+});
+
+class Organization extends React.Component {
+
     render() {
-        return (<h1>{this.props.name}</h1>);
+        const classes = this.props.classes;
+        return (<Card className={classes.card}><CardHeader
+            title={this.props.name}/><CardContent>{this.props.name}</CardContent></Card>);
     }
 }
+
+export default withStyles(styles)(Organization);
